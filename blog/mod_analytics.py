@@ -146,7 +146,7 @@ def ks(x, y, plot=True):
         mpl.rcParams['legend.loc'] = 'best'
         plt.legend()
         plt.show()
-    return 'J_star = {0:.4f} K-S sig = {1:.4f}'.format(J_star, ks_signif(J_star))
+    return 'j_max = {0:.9f} J_star = {1:.4f} K-S sig = {2:.4f}'.format(j_max, J_star, ks_signif(J_star))
 
 
 def plot_lift(y1, y2, y3, y4):
