@@ -332,3 +332,6 @@ a:hover{color:#999;}
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
+/*submit button*/
+.btn-primary{background:#55d737;}
+.btn-primary:hover{background:#999;}
