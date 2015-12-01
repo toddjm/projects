@@ -1,9 +1,7 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
-bals
- */
-
-body {
-  font-family: Georgia, "Times New Roman", Times, serif;
+body, p, li {
+  font-family: 'Open Sans', sans-serif;
   color: #555;
 }
 
@@ -168,7 +166,7 @@ h6, .h6 {
  */
 
 body {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: 'Open Sans', sans-serif;
   color: #555;
 }
 
@@ -212,13 +210,15 @@ h6, .h6 {
   display: inline-block;
   padding: 10px;
   font-weight: 500;
-  color: #cdddeb;
+  color:  #55d737;
 }
 .blog-nav-item:hover,
 .blog-nav-item:focus {
   color: #fff;
   text-decoration: none;
 }
+a {color:#55d737;}
+a:hover{color:#999;}
 
 /* Active state gets a caret at the bottom */
 .blog-nav .active {
@@ -272,6 +272,7 @@ h6, .h6 {
 .sidebar-module {
   padding: 15px;
   margin: 0 -15px 15px;
+  background:#f5f5f5;
 }
 .sidebar-module-inset {
   padding: 15px;
@@ -283,7 +284,8 @@ h6, .h6 {
 .sidebar-module-inset ol:last-child {
   margin-bottom: 0;
 }
-
+#mainSidebar{float:left;}
+.col-sm-offset-1{margin-left:0px;margin-right:5%;}
 
 /* Pagination */
 .pager {
@@ -304,6 +306,7 @@ h6, .h6 {
 
 .blog-post {
   margin-bottom: 60px;
+  float:right;
 }
 .blog-post-title {
   margin-bottom: 5px;
