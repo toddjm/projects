@@ -79,7 +79,7 @@ def lift(predictor, target, pos_thresh=0.0, neg_thresh=0.0, plot=True):
         0, 0.0)
 
     print('Positive:')
-    for i in range(step - 1, nobv, step):
+    for i in range(int(step - 1), int(nobv), int(step)):
         print('{0:.2f} {1:.3f} {2:.3f} {3:3d}'.format(
             idx[i],
             raw_lift_pos[i],
@@ -91,7 +91,7 @@ def lift(predictor, target, pos_thresh=0.0, neg_thresh=0.0, plot=True):
     print()
 
     print('Negative:')
-    for i in range(step - 1, nobv, step):
+    for i in range(int(step - 1), int(nobv), int(step)):
         print('{0:.2f} {1:.3f} {2:.3f} {3:3d}'.format(
             idx[i],
             raw_lift_neg[i],
