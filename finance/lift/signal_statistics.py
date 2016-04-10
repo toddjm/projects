@@ -82,27 +82,27 @@ def lift(x_1, y_1, buy_threshold=0.0, sell_threshold=0.0, plot=True):
         (np.array([lift_sell[i] / float(i) for i in range(1, nobv)])),
         0, 0.0)
 
-    print 'buy:'
+    print('buy:')
     for i in range(step - 1, nobv, step):
-        print '{0:.2f} {1:.3f} {2:.3f} {3:3d}'.format(
+        print('{0:.2f} {1:.3f} {2:.3f} {3:3d}'.format(
             idx[i],
             raw_lift_buy[i],
             100.0 *
             (((raw_lift_buy[i] * float(nobv)) / lift_buy[-1]) - 1.0) /
             idx[i],
-            i)
+            i))
 
-    print
+    print()
 
-    print 'sell:'
+    print('sell:')
     for i in range(step - 1, nobv, step):
-        print '{0:.2f} {1:.3f} {2:.3f} {3:3d}'.format(
+        print('{0:.2f} {1:.3f} {2:.3f} {3:3d}'.format(
             idx[i],
             raw_lift_sell[i],
             100.0 *
             (((raw_lift_sell[i] * float(nobv)) / lift_sell[-1]) - 1.0) /
             idx[i],
-            i)
+            i))
 
     # normalize lift by subtracting the cumulative mean lift
     lift_buy -= np.array([lift_buy[-1] / float(nobv)] * nobv).cumsum()
@@ -248,16 +248,16 @@ def roc(x_1, y_1, theta=0.0, plot=True):
     # negative predictive value
     npv = tneg / (tneg + fneg)
 
-    print 'threshold: {0:.4f}'.format(theta)
-    print
-    print 'Classification probabilities on [0, 1]'
-    print 'FPF: {0:.3f} TPF: {1:.3f} tau: {2:.3f}'.format(fpf, tpf, tau)
-    print
-    print 'Predictive values on [0, 1]'
-    print 'PPV: {0:.3f} NPV: {0:.3f} rho: {2:.3f}'.format(ppv, npv, rho)
-    print
-    print 'Diagnostic likelihood ratios on [0, +oo)'
-    print 'DLR+: {0:.3f} DLR-: {1:.3f}'.format(dlrp, dlrn)
+    print('threshold: {0:.4f}'.format(theta))
+    print()
+    print('Classification probabilities on [0, 1]')
+    print('FPF: {0:.3f} TPF: {1:.3f} tau: {2:.3f}'.format(fpf, tpf, tau))
+    print()
+    print('Predictive values on [0, 1]')
+    print('PPV: {0:.3f} NPV: {0:.3f} rho: {2:.3f}'.format(ppv, npv, rho))
+    print()
+    print('Diagnostic likelihood ratios on [0, +oo)')
+    print('DLR+: {0:.3f} DLR-: {1:.3f}'.format(dlrp, dlrn))
 
     if plot:
         pass
