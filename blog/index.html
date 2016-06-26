@@ -5,13 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="blog about data and science" />
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  <link href="css/blog.css" rel="stylesheet">
   <title>Data Science != Data + Science</title>
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
@@ -20,69 +13,98 @@
     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
   </script>
   </head>
+
 <body>
+  <li><a href="https://github.com/toddjm/" target="_blank">GitHub</a></li>
+  <li><a href="https://www.linkedin.com/in/todd-minehardt-164330b8" target="_blank">LinkedIn</a></li>
 
-<div class="blog-masthead">
-      <div class="container">
-        <nav class="blog-nav">
-          <a class="blog-nav-item active" href="#">Home</a>
-          <a class="blog-nav-item" href="about.html">About</a>
-          <a class="blog-nav-item" href="contact.html">Contact</a>
-        </nav>
-      </div>
-</div>
+<h2>Is there anything better than zfill?</h2>
+<p>June 26, 2016 by <a href="#">Todd</a></p>
 
-    <div class="container">
-      <div class="blog-header">
-        <h1 class="blog-title">uuencode</h1>
-        <p class="lead blog-description">where data and science meet</p>
-      </div>
-      <div class="row">
-         <div class="col-sm-3 col-sm-offset-1 blog-sidebar" id="mainSidebar">
-          <div class="sidebar-module sidebar-module-inset">
-            <h4>About</h4>
-            <p>a blog about data + science</p>
-          </div>
-          <div class="sidebar-module">
-            <h4>Archives</h4>
-            <ol class="list-unstyled">
-              <li><a href="lift_chart_hr_smo2.html">December 13, 2015</a></li>
-            </ol>
-          </div>
-          <div class="sidebar-module">
-            <h4>Elsewhere</h4>
-            <ol class="list-unstyled">
-              <li><a href="https://github.com/toddjm/" target="_blank">GitHub</a></li>
-              <li><a href="https://www.linkedin.com/in/todd-minehardt-164330b8" target="_blank">LinkedIn</a></li>
-            </ol>
-          </div>
-        </div><!-- /.blog-sidebar -->
-        <div class="col-sm-8 blog-main">
-          <div class="blog-post">
-            <h2 class="blog-post-title">Using a Lift Chart to Examine Heart Rate and Muscle Oxygenation</h2>
-            <p class="blog-post-meta">December 13, 2015 by <a href="#">Todd</a></p>
-            <p>We have some heart rate (HR) and muscle oxygenation (SmO2) data taken every second
-               for a 2-hour bike ride. Does a change in HR "predict" a change in SmO2, or is it
-               the other way around? Lift charts are one way to examine the problem.
-          <nav>
-            <ul class="pager">
-              <li><a href="#">Previous</a></li>
-              <li><a href="#">Next</a></li>
-            </ul>
-          </nav>
-          </div>
-        </div><!-- /.blog-main -->
-       
+<p>I got interested in looking at some cycling and running data I have and needed
+to write a piece of code to convert meters per second to minutes and seconds 
+per mile. Here's what I came up with:
 
-      </div><!-- /.row -->
+<pre><code>def ms_to_pace(speed):
+    """Given m/s, return pace as minutes:seconds per mile."""
+    min_per_mile = 26.8224 / speed
+    minutes = int(min_per_mile)
+    seconds = round(60 * (min_per_mile - minutes))
+    return str(minutes) + ':' + str(seconds)
+</code></pre>
 
-    </div><!-- /.container -->
+<p>It seemed to work for a speed of 3.7 m/s, returning 7:15. But for a speed of 3.8 m/s,
+I got 7:4 instead of 7:04. That's where the magic of zfill comes in. I revised the last
+line in my function to read
 
-    <footer class="blog-footer">
-      <p>Copyright 2015 </p>
-      <p>
-        <a href="#">Back to top</a>
-      </p>
-    </footer>
+<pre><code>return str(minutes) + ':' + str(seconds).zfill(2)</code></pre>
+
+and now
+
+<pre><code>ms_to_pace(3.8)
+'7:04'
+</code></pre>
+
+<h2>Using Quandl's python module to look at SPY and VIX data</h2>
+<p>June 21, 2016 by <a href="#">Todd</a></p>
+
+<p>It's pretty straightforward to get daily open/high/low/close data from Quandl
+and use pandas and numpy to get the data into one-dimensional arrays for analysis.
+I use the
+<a href="https://www.continuum.io/downloads#_unix">Anaconda 3.5 python distro</a>
+on a vanilla Ubuntu Linux platform and use Jupyter notebooks most of the time.
+
+<p>First, you'll need to install the Quandl python module by running
+
+<p><kbd>conda install Quandl</kbd></p>
+
+on the command line. The imports I'll use for this post are:
+
+<pre><code>import configobj
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import Quandl
+%matplotlib inline
+</code></pre>
+
+<p>Next, get your authentication token from <a href="https://www.quandl.com">Quandl</a>.
+I store mine in my home directory and use <code>configobj</code> to grab it:
+
+<pre><code>config = configobj.ConfigObj('/home/todd/.authtoken_Quandl')
+authtoken = config['authtoken']
+</code></pre>
+
+<p>One thing we might be interested in is predicting the change in price of
+SPY today (today's close - today's open) from the change in price of VIX 
+from yesterday's close to today's open (today's open - yesterday's close).
+
+<p>We'll define our predictor as
+$$VIX_{open}(t) - VIX_{close}(t-1)$$
+
+and the target as
+
+$$SPY_{close}(t) - SPY_{open}(t)$$
+
+<p>This kind of analysis falls into the general category of rank and sign tests. We're
+asking if the sign and magnitude of the predictor is statistically correlated with the
+sign and magnitude of the target. Simply put: By looking at the open price of VIX today and
+the close price of VIX yesterday, can we predict if the price of SPY at the end of today will be
+less than or more than the open price? If so, we can place our bets and profit!
+
+<p>We can grab daily price data from Quandl as follows:
+
+<pre><code>SPY = Quandl.get("YAHOO/INDEX_SPY", authtoken=authtoken)  # Daily stock prices for SPY.
+VIX = Quandl.get("CBOE/VIX", authtoken=authtoken)  # Daily stock prices for VIX.
+</code></pre>
+
+<p>The first thing we should do is have a look at the sorted distributions of the predictor
+and target, both sorted. The Jupyter notebook for what I've done here and the illustration
+of those sorted distributions is <a href="VIX_SPY_Distributions.html">here</a>.
+
+<footer>
+  <p><a href="#">Back to top</a></p>
+  <p>Copyright 2016 Todd Minehardt</p>
+</footer>
 </body>
 </html>
