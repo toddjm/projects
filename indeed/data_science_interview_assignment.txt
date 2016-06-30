@@ -8,7 +8,7 @@ Roughly 6 hours.
 
 I use the 64-bit Anaconda python 3.5.1 distribution on my Linux
 box (Ubuntu 14.04 LTS). I used numpy, pandas, seaborn, matplotlib, and
-sklearn. I tend to work with a Jupyter notebook running
+scipy.stats. I tend to work with a Jupyter notebook running
 in a browser and a terminal session where I write the code (vim).
 
 3. What steps did you take to prepare the data for the project? Was any
@@ -30,15 +30,14 @@ and industry to map strings to integers. I suspected that this might come in
 handy if a classification scheme turned out to be the solution. It also makes
 plotting a lot easier and I want to always minimize time spent with matplotlib!
 
-For me, the most informative step is visualizing the data, which yields
-clues on how to proceed. I used the seaborn pairplot function with the
-linear regression option to look at the relationships between the 8 variables
-of interest (specifically, looking at which of the 7 non-salary variables
-exhibited some linear relationship to salary).
-
-I also looked at the correlation coefficients of each of the 7 non-salary
+I looked at the correlation coefficients of each of the 7 non-salary
 variables with salary: this informed my choice of which variables to use
-in constructing my model.
+in constructing my model. I used the scipy.stats.pearsonr function and found
+positive correlations between salary and yearsExperience (0.375),
+major (0.274); and negative correlations between salary and jobType (-0.311),
+milesFromMetropolis (-0.297), and degree (-0.153). I discarded
+companyId and industry as the correlation coefficients were very small
+(0.001 and -0.046, respectively).
 
 4. What algorithmic method did you apply? Why? What other methods did you
 consider?
@@ -59,7 +58,8 @@ For feature identification, I could have employed PCA or one of the related
 algorithms, but I'm not comfortable in using these methods blindly and my
 experience with them is very limited.
 
-In summary, I went with ordinary least-squares linear regression.
+In summary, I went with ordinary least-squares linear regression from 
+statsmodels.formula.api.
 
 5. Describe how the algorithmic method that you chose works?
 

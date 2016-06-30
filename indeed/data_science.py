@@ -31,4 +31,10 @@ for name in names:
     train_data[name] = train_data[name].replace(mapping[name])
 
 # Look at correlation coefficients for each of the categories vs. salary.
+names = ['companyId', 'industry', 'major', 'jobType', 'degree',
+         'yearsExperience', 'milesFromMetropolis']
+for name in names:
+    x = scipy.stats.pearsonr(train_data.salary, train_data[name])
+    print(name, x[0])
 
+# Keep 
