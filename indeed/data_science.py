@@ -18,10 +18,6 @@ train_data = train_data[train_data.salary != 0]
 # Get rid of rows with any null values.
 train_data.dropna(how='any', inplace=True)
 
-# Some visualizations will help us identify which features are good
-# predictors of salary. We'll avoid matplotlib problems by enumerating
-# company ID, job type, degree, major, and industry.
-
 # Keep track of the mappings of names to integers.
 mapping = {}
 names = ['companyId', 'jobType', 'degree', 'major', 'industry']
@@ -33,3 +29,6 @@ for name in names:
             mapping[name].update({i[1]: i[0]})
     # Replace name with integer.
     train_data[name] = train_data[name].replace(mapping[name])
+
+# Look at correlation coefficients for each of the categories vs. salary.
+

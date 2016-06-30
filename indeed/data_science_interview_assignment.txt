@@ -1,0 +1,90 @@
+Todd Minehardt July 1, 2016.
+
+1. How long did it take you to solve the problem?
+
+Roughly 6 hours.
+
+2. What software language and libraries did you use to solve the problem?
+
+I use the 64-bit Anaconda python 3.5.1 distribution on my Linux
+box (Ubuntu 14.04 LTS). I used numpy, pandas, seaborn, matplotlib, and
+sklearn. I tend to work with a Jupyter notebook running
+in a browser and a terminal session where I write the code (vim).
+
+3. What steps did you take to prepare the data for the project? Was any
+cleaning necessary?
+
+I work on the command line a lot so I typically do things like wc and head -10
+on data files to get a feel for size and see if there are headers (and what the
+separators are, if any). In this case, I found 5 entries with a salary of 0,
+so those were removed from the data set (see my code). I also will drop rows
+with any NaN values (also handled in my code, none found). Finally, there were
+several entries where, say, degree or major was NONE, but I kept those in the
+data set because they are valid for prediction.
+
+The training features and salary data were then joined on jobId into one
+data frame (see my code).
+
+The next bit was enumerating the classes for companyId, jobType, major, degree,
+and industry to map strings to integers. I suspected that this might come in
+handy if a classification scheme turned out to be the solution. It also makes
+plotting a lot easier and I want to always minimize time spent with matplotlib!
+
+For me, the most informative step is visualizing the data, which yields
+clues on how to proceed. I used the seaborn pairplot function with the
+linear regression option to look at the relationships between the 8 variables
+of interest (specifically, looking at which of the 7 non-salary variables
+exhibited some linear relationship to salary).
+
+I also looked at the correlation coefficients of each of the 7 non-salary
+variables with salary: this informed my choice of which variables to use
+in constructing my model.
+
+4. What algorithmic method did you apply? Why? What other methods did you
+consider?
+
+The task is to predict a continuous variable as a function of several discrete
+variables, so the ideal algorithm in my opinion is multiple linear
+regression. My preliminary look at the data showed that there were obvious
+relationships between salary, yearsExperience, and jobType, so by combining
+independent variables the quality of the model for predicting the dependent
+variable (salary) is increased.
+
+I like linear regression for this problem because it's not a classification
+problem, nor is is a clustering problem: it's a regression problem, and
+there's no reason in my mind to go fancy, especially for something with a
+target completion time of 4 hours and on a million-row data set.
+
+For feature identification, I could have employed PCA or one of the related
+algorithms, but I'm not comfortable in using these methods blindly and my
+experience with them is very limited.
+
+In summary, I went with ordinary least-squares linear regression.
+
+5. Describe how the algorithmic method that you chose works?
+
+Linear least-squares regression works by minimizing the sum of squared errors
+of the calculated dependent variable and that of the actual value of the
+dependent variable. The resulting line of best fit is the regression line, and
+the formula for that line is the formula into which one plugs in data to yield
+a prediction value.
+
+6. What features did you use? Why?
+
+I used X, Y, and Z because (1) the correlation coefficients to salary were
+highest; and (2) because visual inspection of plots of X, Y, and Z individiual
+linear regressions against salary illustrated some non-random relationship.
+
+7. How did you train your model? During training, what issues concerned you?
+
+I trained my model by splitting training data into 5 segments, then fitting
+my function/model to 80% of the data and predicting the 20% of data that
+was left out. This cross-validation technique 
+
+8. How did you assess the accuracy of your predictions? Why did you choose that
+method?
+
+For each of the 5 cases of model validation, I looked at the error
+
+
+
