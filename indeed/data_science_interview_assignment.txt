@@ -2,22 +2,25 @@ Todd Minehardt July 1, 2016.
 
 1. How long did it take you to solve the problem?
 
-Roughly 6 hours.
+Roughly 6 hours. I've exceeded the allotted time and am turning in
+what I have accomplished.
 
 2. What software language and libraries did you use to solve the problem?
 
 I use the 64-bit Anaconda python 3.5.1 distribution on my Linux
-box (Ubuntu 14.04 LTS). I used numpy, pandas, seaborn, matplotlib, and
+box (Ubuntu 14.04 LTS). I used pandas, statsmodels, and
 scipy.stats. I tend to work with a Jupyter notebook running
-in a browser and a terminal session where I write the code (vim).
+in a browser and a terminal session where I write the code (vim). I also
+use matplotlib to visualize the data, but in the present case I was
+running into issues on my laptop with memory and didn't do as much
+visual inspection as I normally would.
 
 3. What steps did you take to prepare the data for the project? Was any
 cleaning necessary?
 
 I work on the command line a lot so I typically do things like wc and head -10
 on data files to get a feel for size and see if there are headers (and what the
-separators are, if any). In this case, I found 5 entries with a salary of 0,
-so those were removed from the data set (see my code). I also will drop rows
+separators are, if any). I also will drop rows
 with any NaN values (also handled in my code, none found). Finally, there were
 several entries where, say, degree or major was NONE, but I kept those in the
 data set because they are valid for prediction.
@@ -25,10 +28,11 @@ data set because they are valid for prediction.
 The training features and salary data were then joined on jobId into one
 data frame (see my code).
 
-The next bit was enumerating the classes for companyId, jobType, major, degree,
-and industry to map strings to integers. I suspected that this might come in
-handy if a classification scheme turned out to be the solution. It also makes
-plotting a lot easier and I want to always minimize time spent with matplotlib!
+The next bit was enumerating the variables for companyId, jobType, major,
+degree, and industry to map strings to integers because I was already
+considering a regression solution and needed to classify the variables
+in question. This also comes in handy if a classification scheme turned
+out to be a solution, where salary ranges could be the target.
 
 I looked at the correlation coefficients of each of the 7 non-salary
 variables with salary: this informed my choice of which variables to use
@@ -47,7 +51,9 @@ variables, so the ideal algorithm in my opinion is multiple linear
 regression. My preliminary look at the data showed that there were obvious
 relationships between salary, yearsExperience, and jobType, so by combining
 independent variables the quality of the model for predicting the dependent
-variable (salary) is increased.
+variable (salary) is increased. I incrementally added variables to the linear
+model and the R-squared value increased to 0.402, so I chose my model on
+that basis.
 
 I like linear regression for this problem because it's not a classification
 problem, nor is is a clustering problem: it's a regression problem, and
@@ -58,8 +64,16 @@ For feature identification, I could have employed PCA or one of the related
 algorithms, but I'm not comfortable in using these methods blindly and my
 experience with them is very limited.
 
+If the problem had been cast with salary ranges as the target, I would have
+gone with a classifier-based approach and used lift charts and ROC curves to
+determine how the sign and magnitude of a predictor is a good or bad signal
+for a target. However, that was not how this problem was structured.
+
 In summary, I went with ordinary least-squares linear regression from 
-statsmodels.formula.api.
+statsmodels.formula.api. My model is:
+
+salary = 124.87 + 2.01 * yearsExperience + 3.85 * major - 2.76 * degree
+         - 4.97 * jobType - 0.4 * milesFromMetropolis
 
 5. Describe how the algorithmic method that you chose works?
 
@@ -71,20 +85,41 @@ a prediction value.
 
 6. What features did you use? Why?
 
-I used X, Y, and Z because (1) the correlation coefficients to salary were
-highest; and (2) because visual inspection of plots of X, Y, and Z individiual
-linear regressions against salary illustrated some non-random relationship.
+I used yearsExperience, major, jobType, degree, and milesFromMetropolis
+because (1) the correlation coefficients to salary were highest; and
+(2) because the goodness-of-fit of my linear model increased as I incrementally
+added each feature to it.
 
 7. How did you train your model? During training, what issues concerned you?
 
-I trained my model by splitting training data into 5 segments, then fitting
-my function/model to 80% of the data and predicting the 20% of data that
-was left out. This cross-validation technique 
+I was running way over the time limit for this exercise, so I simply fit my
+model to all the data.
+
+What I should have done is split my training data into 5 segments, then fit
+my function/model to 80% of the data and then comparing the predicted salary to
+the known salary in the 20% of data that was left out. This procedure is
+then repeated 5 times and is known as cross-validation. It reduces the
+potential for overfit and the chance that a model is very good or bad for a
+certain subset of data.
 
 8. How did you assess the accuracy of your predictions? Why did you choose that
 method?
 
-For each of the 5 cases of model validation, I looked at the error
+Again, I really ran over the budgeted time for this exercise and didn't do due
+diligence here. I looked at the mean and standard deviation of the 
+differences between the predicted salaries and the given ones: it's 0.5 +/- 30,
+which is not very good.
 
+There are a bunch of other ways to assess the accuracy, but the issue would
+have been diminished if I had not spent so much time on it and more diligently
+built the model on subsets of data.
 
+9. Which features had the greatest impact on salary? How did you identify these
+to be most significant? Which features had the least impact on salary? How did
+you identify these?
+
+I looked at the correlation coefficients to determine that yearsExperience and
+jobType had the greatest impact on salary and companyId and industry had the 
+least. Given more time, I would iterate through the OLS model and plot the
+residuals of the fits as a function of included and excluded variables.
 
