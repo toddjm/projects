@@ -1,0 +1,35 @@
+When you're looking at your muscle oxygen (SmO2) numbers for various
+activities, you'll likely notice that the initial readings fluctuate
+from day to day. For an assessment, a specific protocol is followed,
+and trends in muscle oxygen are easier to follow and analyze for that
+reason. But what about muscle oxygen levels recorded during
+unstructured activities?
+
+BSX Athletics team member Caldwell Shine commutes
+to and from our offices by bicycle each day, and he collects heart
+rate and muscle oxygen data along the way. We took muscle
+oxygen values for 4 recent trips and plotted them as seen
+in Figure 1.
+
+We get a lot of questions concerning muscle oxygen levels, in
+particular about the readings observed when BSXinsight is first
+turned on. Those readings can and will vary for a variety
+of reasons. The biggest contribution to initial muscle oxygen
+variation is the amount of activity you've had before turning on
+BSXinsight. If you've not moved around to get your blood flowing,
+those intital readings will be a little lower than when you did
+do some even light warmup or movement. In Figure 1, we see Caldwell's
+muscle oxygen ranging from 67% to 73% at the outset of his rides.
+
+During an unstructured activity, muscle oxygen levels will change 
+as a function of exertion, fatigue, and other factors that are not
+controlled (wind speed, elevation changes, and so on). The middle
+of Caldwell's ride - 360 to 1080 seconds - shows some nice efforts,
+including a climb on his route. Muscle oxygen changes trend the same
+way but we still see a lot of fluctuation because the activity is
+unstructured.
+
+The final parts of Caldwell's rides exhibit wide variation in muscle
+oxygen and illustrate how variables like traffic lights, wind direction,
+and subject fatigue factor into muscle oxygen levels.
+

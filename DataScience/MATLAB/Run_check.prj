@@ -1,0 +1,141 @@
+<deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
+  <configuration build-checksum="3327740182" file="C:\Users\paulobsx\Documents\Matlab_github\Run_check.prj" location="C:\Users\paulobsx\Documents\Matlab_github" name="Run_check" preferred-package-location="C:\Users\paulobsx\Google Drive\Tech_RD\Sensor\Research\SW and FW Archive\MATLAB Apps\Run_check\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="MATLAB Compiler for Standalone Applications">
+    <param.appname>Run_check</param.appname>
+    <param.icon />
+    <param.icons />
+    <param.version>1.11</param.version>
+    <param.authnamewatermark />
+    <param.email>paulo@bsxathletics.com</param.email>
+    <param.company>BSX Athletics</param.company>
+    <param.summary>Application used to process and display data from LT assessment and Daily activities</param.summary>
+    <param.description>Requires python 3 installation and access to Google Drive folder \Google Drive\Tech_RD\Sensor\Research\SW and FW Archive</param.description>
+    <param.screenshot>C:\Users\paulobsx\Documents\OB2.png</param.screenshot>
+    <param.guid />
+    <param.installpath.string>\BSX Athletics\Run_check\</param.installpath.string>
+    <param.installpath.combo>option.installpath.programfiles</param.installpath.combo>
+    <param.logo>C:\Users\paulobsx\Documents\OB2.png</param.logo>
+    <param.install.notes />
+    <param.intermediate>C:\Users\paulobsx\Documents\Run_check\for_testing</param.intermediate>
+    <param.output>C:\Users\paulobsx\Google Drive\Tech_RD\Sensor\Research\SW and FW Archive\MATLAB Apps\Run_check\for_redistribution</param.output>
+    <param.user.defined.mcr.options />
+    <param.embed.ctf>true</param.embed.ctf>
+    <param.server.ctf>C:\Users\paulobsx\Documents\Run_check\for_testing\.ctf</param.server.ctf>
+    <param.server.readme>C:\Users\paulobsx\Documents\Run_check\for_testing\readme.txt</param.server.readme>
+    <param.target.type>subtarget.standalone</param.target.type>
+    <param.support.packages />
+    <param.web.mcr>false</param.web.mcr>
+    <param.package.mcr>true</param.package.mcr>
+    <param.no.mcr>false</param.no.mcr>
+    <param.web.mcr.name>MyAppInstaller_web</param.web.mcr.name>
+    <param.package.mcr.name>Run_check_Installer_mcr</param.package.mcr.name>
+    <param.no.mcr.name>MyAppInstaller_app</param.no.mcr.name>
+    <param.windows.command.prompt>true</param.windows.command.prompt>
+    <param.create.log>false</param.create.log>
+    <param.log.file />
+    <unset>
+      <param.icon />
+      <param.icons />
+      <param.authnamewatermark />
+      <param.guid />
+      <param.installpath.string />
+      <param.installpath.combo />
+      <param.install.notes />
+      <param.user.defined.mcr.options />
+      <param.embed.ctf />
+      <param.server.ctf />
+      <param.server.readme />
+      <param.target.type />
+      <param.support.packages />
+      <param.no.mcr />
+      <param.web.mcr.name />
+      <param.no.mcr.name />
+      <param.windows.command.prompt />
+      <param.create.log />
+      <param.log.file />
+    </unset>
+    <fileset.main>
+      <file>${PROJECT_ROOT}\Run_check.m</file>
+    </fileset.main>
+    <fileset.resources>
+      <file>${PROJECT_ROOT}\Auxiliary_Functions\avgfiltNaN.m</file>
+      <file>${PROJECT_ROOT}\Auxiliary_Functions\base64decode.m</file>
+      <file>${PROJECT_ROOT}\Auxiliary_Functions\baselineStats.m</file>
+      <file>${PROJECT_ROOT}\Auxiliary_Functions\calc_mu_a.m</file>
+      <file>${PROJECT_ROOT}\Auxiliary_Functions\calc_mu_eff.m</file>
+      <file>${PROJECT_ROOT}\Auxiliary_Functions\calc_mu_s.m</file>
+      <file>${PROJECT_ROOT}\Auxiliary_Functions\calc_SmO2.m</file>
+      <file>${PROJECT_ROOT}\Auxiliary_Functions\de2bi.m</file>
+      <file>${PROJECT_ROOT}\Auxiliary_Functions\fences.m</file>
+      <file>${PROJECT_ROOT}\Auxiliary_Functions\getAllCnt.m</file>
+      <file>${PROJECT_ROOT}\Auxiliary_Functions\getAssessment.m</file>
+      <file>${PROJECT_ROOT}\Auxiliary_Functions\getCSV.m</file>
+      <file>${PROJECT_ROOT}\Auxiliary_Functions\getCurrents.m</file>
+      <file>${PROJECT_ROOT}\Auxiliary_Functions\getDevice.m</file>
+      <file>${PROJECT_ROOT}\Auxiliary_Functions\getDeviceFile.m</file>
+      <file>${PROJECT_ROOT}\Auxiliary_Functions\getLeds.m</file>
+      <file>${PROJECT_ROOT}\Auxiliary_Functions\getSweep.m</file>
+      <file>${PROJECT_ROOT}\Auxiliary_Functions\getToken.m</file>
+      <file>${PROJECT_ROOT}\Auxiliary_Functions\istissue.m</file>
+      <file>${PROJECT_ROOT}\Auxiliary_Functions\makeRequestUrlRead2.m</file>
+      <file>${PROJECT_ROOT}\Auxiliary_Functions\parse_json.m</file>
+      <file>${PROJECT_ROOT}\Auxiliary_Functions\processCounts.m</file>
+      <file>${PROJECT_ROOT}\Auxiliary_Functions\processSmO2.m</file>
+      <file>${PROJECT_ROOT}\Auxiliary_Functions\removeChar.m</file>
+      <file>${PROJECT_ROOT}\Auxiliary_Functions\saveAssessmentPPT.m</file>
+      <file>${PROJECT_ROOT}\Auxiliary_Functions\saveppt2\saveppt2\saveppt2.m</file>
+      <file>${PROJECT_ROOT}\Auxiliary_Functions\V1_1_urlread2\urlread2.m</file>
+      <file>${PROJECT_ROOT}\Run_check_plot.m</file>
+    </fileset.resources>
+    <fileset.package />
+    <build-deliverables>
+      <file location="C:\Users\paulobsx\Documents\Run_check\for_testing" name="Run_check.exe" optional="false">C:\Users\paulobsx\Documents\Run_check\for_testing\Run_check.exe</file>
+      <file location="C:\Users\paulobsx\Documents\Run_check\for_testing" name="splash.png" optional="false">C:\Users\paulobsx\Documents\Run_check\for_testing\splash.png</file>
+      <file location="C:\Users\paulobsx\Documents\Run_check\for_testing" name="readme.txt" optional="true">C:\Users\paulobsx\Documents\Run_check\for_testing\readme.txt</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>C:\Program Files\MATLAB\R2014a</root>
+      <toolboxes>
+        <toolbox name="matlabhdlcoder" />
+        <toolbox name="fixedpoint" />
+        <toolbox name="embeddedcoder" />
+        <toolbox name="matlabcoder" />
+      </toolboxes>
+      <toolbox>
+        <matlabhdlcoder>
+          <enabled>true</enabled>
+        </matlabhdlcoder>
+      </toolbox>
+      <toolbox>
+        <fixedpoint>
+          <enabled>true</enabled>
+        </fixedpoint>
+      </toolbox>
+      <toolbox>
+        <embeddedcoder>
+          <enabled>true</enabled>
+        </embeddedcoder>
+      </toolbox>
+      <toolbox>
+        <matlabcoder>
+          <enabled>true</enabled>
+        </matlabcoder>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>6.2</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>

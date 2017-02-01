@@ -1,0 +1,16 @@
+What is SmO2 and Why Do We Care?
+
+One of the most challenging and rewarding tasks we have
+here at BSX Athletics is helping our customers use and
+benefit from data colleted by their BSXinsight devices.
+
+Presently, BSXinsight can be used to determined lactate
+threshold (LT) and observe SmO2 as a function of time
+during an assessment or a daily activity.
+
+SmO2 is a measure of the balance of supply and demand of
+blood oxygen in the muscle being monitored. For BSXinsight,
+that's the calf muscle of either leg.
+
+As the activity level increases, the muscle needs more oxygen
+to generate power. And that oxygen is transported by blood. 

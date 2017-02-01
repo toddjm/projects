@@ -1,0 +1,102 @@
+Off-the-Calf: Can BSXinsight Be Used on Other Parts of the Body?
+
+At BSX Athletics, our team is actively working to turn your body's most important
+bio-data into simple, actionable information. During the course of our studies,
+we regularly come across interesting data that might be of interest to the folks
+who are using our hardware and software. We plan to be more diligent in sharing
+those insights!
+
+
+One topic that interests us (and some of our customers) is: Can BSXinsight be
+used to measure physiologically-relevant data at other locations on the body
+besides the calf? The short answer is yes. Below are a few early observations
+from our testing.
+
+
+Testing: Our subject - BSX's own Adam Alter - volunteered to do an 8-stage Lactate
+threshold (LT) assessment on an indoor bike trainer.
+
+
+* Each interval was 3 minutes.  * The first interval was against a resistance
+of 120 watts.  * The second interval started at 200 watts, and the resistance
+was increased by 20 watts until the end.  * The end was 320 watts.
+
+
+We convinced Adam to wear additional BSXinsight units on his lower back, upper
+chest, and right forearm. Therefore, we were able to  collect data for 24 minutes
+from 4 different sites on Adam.
+
+
+Takeaways: The first outcome from this study is shown in Figure 1 below. That's
+a montage from Adam's dashboard showing that LT was more or less determined to
+be the same regardless of where the BSXinsight sensor was placed. Keeping in
+mind that BSXinsight is specifically designed for use on the calf, it appears
+that similar results for an LT assessment can be measured on the lower and upper
+torso as well as upper extremities.
+
+
+ results-pic.jpg
+
+
+
+Figure 1 - Adam's image of his dashboard for LT results for 4 body sites.
+
+
+BSXinsight provides a measure of how much of the blood in the muscle under the
+sensor is oxygenated at a given point in time, or muscle oxygen. In Figure 2
+below, we're looking at the trends in muscle oxygen during Adam's LT assessment.
+The power plateaus are plotted for reference.
+
+
+* The green, yellow, and red shading corresponds to times during the assessment
+that can be classified as aerobic, transition, and anaerobic zones.  * The
+vertical dashed red line is Adam's LT, as determined from the calf measurement.
+
+
+ SmO2_multiple_locations.png
+
+
+
+Figure 2 - A look at muscle oxygenation.
+
+
+
+
+The trends in muscle oxygen levels for the 4 body sites we're looking at are the
+same as a function of time. Early on, when Adam is warming up in the first and
+second stages, muscle oxygen moves around a bit.
+
+
+At 360 seconds, Adam is starting to work more and his blood is circulating more
+thoroughly. From that mark until about 820 seconds, he's in the green zone.
+Muscle oxygen is decreasing as power increases, but the change as a function of
+time is relatively small. He is still in the aerobic zone.
+
+
+By the time he hits the green-yellow border (that's LT1, or the beginning of the
+aerobic to anaerobic transition zone), muscle oxygen trends start going down a
+little faster and deeper than before: that's where the demand for oxygen by the
+muscle is making a dent in the supply. The downward slopes of the lines in the
+yellow zone are more pronounced than in the green zone.
+
+
+Finally, Adam crosses into the red zone at 1120 seconds, corresponding to hit
+calf-derived LT of 289 watts. After crossing the yellow-red border (thats LT2,
+where the subject is fully anaerobic), its downhill and fast: demand for muscle
+oxygen greatly exceeds supply.
+
+
+Recap: In short - yes, while BSXinsight is designed for the calf to maintain
+consistency, it can be placed in different areas of the body and still get results
+for an LT assessment that agree within 5% of the calf measurement. Weve seen
+this behavior on multiple occasions for Adam, but need to examine more subjects
+to provide anything more concrete than the anecdotal observations we make in
+this post.
+
+
+While the BSXinsight is able to get the same results from different areas of the
+body, we encourage you to place it in the same position on your body every time.
+This will ensure the data measured is consistent over time, and that any discrepancy
+wont be related to differences between muscle groups. And while we do encourage
+and want to hear about experimentation, keep in mind that BSXinsight is designed
+for use on the calf.

@@ -1,0 +1,14 @@
+BSXinsight is a great tool for assessing your
+lactate threshold (LT) and integrating muscle
+oxygen (SmO2) into your training routines. But are
+there other "markers" in the SmO2 data that can be
+examined and utilized?
+
+Can we look at muscle oxygen and heart rate (HR) for
+an activity - not an assessment - and glean any useful
+or actionable data? We examined HR and SmO2 for an
+outdoor ride
+
+Looking at the time lag between a dip in muscle oxygen and
+spike in heart rate for these intervals (solid ver
+
