@@ -66,7 +66,7 @@ for i in range(1, 50):
         pass
 
 # Write to disk.
-outdir = os.path.join('futures_data', exchange, symbol, 'continuous')
+outdir = os.path.join('futures', exchange, symbol, 'continuous')
 if not os.path.exists(outdir):
     os.makedirs(outdir)
 for i in data.keys():
@@ -84,7 +84,7 @@ for i in range(start, end + 1):
             pass
 
 # Write to disk.
-outdir = os.path.join('futures_data', exchange, symbol, 'individual')
+outdir = os.path.join('futures', exchange, symbol, 'individual')
 if not os.path.exists(outdir):
     os.makedirs(outdir)
 for i in data.keys():
