@@ -13,6 +13,7 @@ Command line arguments:
 
 import argparse
 import configobj
+import os
 import quandl
 
 __author__ = "Todd Minehardt"
@@ -55,18 +56,21 @@ config = configobj.ConfigObj('/Users/tminehardt/.authtoken_Quandl')
 authtoken = config['authtoken']
 
 # For continuous data.
-#data = {}
-#for i in range(1, 50):
-#    name = symbol + str(i)
-#    contract = 'CHRIS/CME_' + symbol + str(i)
-#    try:
-#        data[name] = quandl.get(contract, authtoken=authtoken)
-#    except:
-#        pass
+data = {}
+for i in range(1, 50):
+    name = symbol + str(i)
+    contract = 'CHRIS/' + exchange + '_' + symbol + str(i)
+    try:
+        data[name] = quandl.get(contract, authtoken=authtoken)
+    except:
+        pass
 
 # Write to disk.
-#for i in data.keys():
-#    data[i].to_csv(i + '.csv')
+outdir = os.path.join('futures_data', exchange, symbol, 'continuous')
+if not os.path.exists(outdir):
+    os.makedirs(outdir)
+for i in data.keys():
+    data[i].to_csv(os.path.join(outdir, i + '.csv'))
 
 # For individual contracts.
 data = {}
@@ -80,5 +84,8 @@ for i in range(start, end + 1):
             pass
 
 # Write to disk.
+outdir = os.path.join('futures_data', exchange, symbol, 'individual')
+if not os.path.exists(outdir):
+    os.makedirs(outdir)
 for i in data.keys():
-    data[i].to_csv(i + '.csv')
+    data[i].to_csv(os.path.join(outdir, i + '.csv'))
