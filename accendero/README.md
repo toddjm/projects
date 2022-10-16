@@ -21,10 +21,6 @@ In the end, I present an IC50 value for imatinib with one of many potential tyro
 the molecule satisfies Lipinski's Rule of 5 for further exploration. There are some very nice graphs that I made use of (radar plots) which
 illustrate the compounds that fulfill or violate the Ro5.
 
-### Issues
-
-Working in the python environment is tricky. While I was able to create a virtual environment on my Mac, and complete the entire project, I remain more than a little upset that I cannot seem to follow my own installation instructions and get a working copy.
-
 ### Installation Instructions
 
 1. Install a fresh version of [Anaconda Navigator](https://www.anaconda.com/).
@@ -32,8 +28,9 @@ Working in the python environment is tricky. While I was able to create a virtua
 3. Do `git clone git@github.com:toddjm/projects.git`. Note that this might not work, in which case you should
 download the zip file from the projects repo.
 4. Change directories so you are in projects/accendero.
-5. In the cloned repo (you want to be in projects/accendero), create a new virtual environment:
-  `conda create --name <env> --file requirements.txt -c conda-forge`
+5. Do `conda create --name my_virtual_env && conda activate my_virtual_env`
+6. In the cloned repo, try using conda for the install:
+  `conda install --file requirements.txt -c conda-forge`
 6. If you wish to install packages using `pip`:
   `pip install -r requirements_pip.txt`
 7. 
