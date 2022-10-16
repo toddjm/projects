@@ -23,9 +23,11 @@ illustrate the compounds that fulfill or violate the Ro5.
 
 ### Installation Instructions
 
-1. Install a fresh version of Anaconda Navigator on a Mac. I wrote this and ran it on Monterey 12.6, Macbook with M2 chipset.
-2. In a terminal window, go to where you will clone this repo. Clone the repo.
-3. In the cloned repo (you want to be in projects/accendero), create a new virtual environment:
-  `conda create --name <env> --file requirements.txt`
-4. If you wish to install packages using `pip`:
+1. Install a fresh version of [Anaconda Navigator](https://www.anaconda.com/).
+2. In a terminal window on a Mac or an Anaconda Prompt terminal on Windows, go to where you will clone this repo.
+4. Do `git clone git@github.com:toddjm/projects.git`
+5. Change directories so you are in projects/accendero.
+6. In the cloned repo (you want to be in projects/accendero), create a new virtual environment:
+  `conda create --name <env> --file requirements.txt -c conda-forge`
+5. If you wish to install packages using `pip`:
   `pip install -r requirements_pip.txt`
