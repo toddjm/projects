@@ -33,3 +33,4 @@ download the zip file from the projects repo.
 6. In Anaconda Navigator Home, you will see accendero_env in the channels window at the top.
 7. Launch JupyterLab, making sure that the accendero_env channel is shown as in (6), above.
 8. Open both Jupyter notebooks, and run the Data_Acquisition_and_Analysis_IC50 one first. It will take a few minutes to run. Note that you might have to rerun cells 5 and 6 in order for the nglview widget image to render. The second notebook can be run, as it uses data written to disk from the first one.
+9. There is one file for a pip install (requirements_pip.txt) and one for a conda install (requirements.txt). I was unable to get either of them to work despite them originating from my working virtual environment. I strongly suggest you stick with the instructions to handle this via Anaconda Navigator.
