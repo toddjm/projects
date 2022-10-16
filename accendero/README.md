@@ -26,10 +26,10 @@ illustrate the compounds that fulfill or violate the Ro5.
 0. This does not work on Windows 10, therefore I only guarantee on a Mac (I'm on Monterey 12.6, M2 chipset).
 1. Install a fresh version of [Anaconda Navigator](https://www.anaconda.com/).
 2. In a terminal window on a Mac, go to where you will clone this repo.
-3. Do `git clone https://github.com/toddjm/projects.git`. Note that this might not work, in which case you should
+3. Do `git clone https://github.com/toddjm/projects.git`. If this does not work, you should
 download the zip file from the projects repo.
 4. Change directories so you are in projects/accendero.
 5. In Anaconda Navigator, import the file `accendero_env.yaml` in the Environments tab.
 6. In Anaconda Navigator Home, you will see accendero_env in the channels window at the top.
-7. Launch JupyterLab.
-8. Open both Jupyter notebooks, and run the Data_Acquisition_and_Analysis_IC50 one first. It will take a few minutes to run. Note that you might have to rerun cells 5 and 6 in order for the nglview widget image to render.
+7. Launch JupyterLab, making sure that the accendero_env channel is shown as in (6), above.
+8. Open both Jupyter notebooks, and run the Data_Acquisition_and_Analysis_IC50 one first. It will take a few minutes to run. Note that you might have to rerun cells 5 and 6 in order for the nglview widget image to render. The second notebook can be run, as it uses data written to disk from the first one.
